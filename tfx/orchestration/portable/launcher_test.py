@@ -355,7 +355,7 @@ class LauncherTest(test_case_utils.TfxTest):
           executions[0],
           ignored_fields=['type_id', 'custom_properties',
                           'create_time_since_epoch',
-                          'last_update_time_since_epoch'])
+                          'last_update_time_since_epoch', 'name'])
 
   def testLauncher_InputPartiallyReady(self):
     # No new execution is triggered and registered if all inputs are not ready.
@@ -387,7 +387,7 @@ class LauncherTest(test_case_utils.TfxTest):
           new_executions[0],
           ignored_fields=['type_id', 'custom_properties',
                           'create_time_since_epoch',
-                          'last_update_time_since_epoch'])
+                          'last_update_time_since_epoch', 'name'])
 
   def testLauncher_EmptyOptionalInputTriggersExecution(self):
     self.reloadPipelineWithNewRunId()
@@ -439,7 +439,7 @@ class LauncherTest(test_case_utils.TfxTest):
           execution,
           ignored_fields=[
               'type_id', 'create_time_since_epoch',
-              'last_update_time_since_epoch'
+              'last_update_time_since_epoch', 'name'
           ])
 
   def testLauncher_PublishingNewArtifactsAndUseCache(self):
@@ -491,7 +491,7 @@ class LauncherTest(test_case_utils.TfxTest):
           execution,
           ignored_fields=[
               'type_id', 'create_time_since_epoch',
-              'last_update_time_since_epoch'
+              'last_update_time_since_epoch', 'name'
           ])
 
     self.reloadPipelineWithNewRunId()
@@ -513,7 +513,7 @@ class LauncherTest(test_case_utils.TfxTest):
           execution,
           ignored_fields=[
               'type_id', 'create_time_since_epoch',
-              'last_update_time_since_epoch'
+              'last_update_time_since_epoch', 'name'
           ])
 
   def testLauncher_CacheIsSupportedForNodeWithNoOutput(self):
@@ -541,7 +541,7 @@ class LauncherTest(test_case_utils.TfxTest):
           execution,
           ignored_fields=[
               'type_id', 'create_time_since_epoch',
-              'last_update_time_since_epoch'
+              'last_update_time_since_epoch', 'name'
           ])
 
     self.reloadPipelineWithNewRunId()
@@ -564,7 +564,7 @@ class LauncherTest(test_case_utils.TfxTest):
           execution,
           ignored_fields=[
               'type_id', 'create_time_since_epoch',
-              'last_update_time_since_epoch'
+              'last_update_time_since_epoch', 'name'
           ])
 
   def testLauncher_CacheDisabled(self):
@@ -618,7 +618,7 @@ class LauncherTest(test_case_utils.TfxTest):
           execution,
           ignored_fields=[
               'type_id', 'create_time_since_epoch',
-              'last_update_time_since_epoch'
+              'last_update_time_since_epoch', 'name'
           ])
 
     self.reloadPipelineWithNewRunId()
@@ -664,7 +664,7 @@ class LauncherTest(test_case_utils.TfxTest):
           execution,
           ignored_fields=[
               'type_id', 'create_time_since_epoch',
-              'last_update_time_since_epoch'
+              'last_update_time_since_epoch', 'name'
           ])
 
   def testLauncher_ReEntry(self):
@@ -788,7 +788,7 @@ class LauncherTest(test_case_utils.TfxTest):
           execution,
           ignored_fields=[
               'type_id', 'create_time_since_epoch',
-              'last_update_time_since_epoch'
+              'last_update_time_since_epoch', 'name'
           ])
 
   def testLauncher_ExecutionFailed(self):
@@ -850,7 +850,7 @@ class LauncherTest(test_case_utils.TfxTest):
           executions[-1],
           ignored_fields=[
               'type_id', 'create_time_since_epoch',
-              'last_update_time_since_epoch'
+              'last_update_time_since_epoch', 'name'
           ])
 
   def testLauncher_with_CustomDriver_NewSpan(self):
